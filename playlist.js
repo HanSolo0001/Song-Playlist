@@ -9,21 +9,21 @@ Playlist.prototype.add = function(song) {
 
 Playlist.prototype.play = function() {
   var currentSong = this.songs[this.nowPlayingIndex];
-  currentSong.play();
+  currentSong.play(this.nowPlayingIndex);
 };
 
 Playlist.prototype.stop = function(){
   var currentSong = this.songs[this.nowPlayingIndex];
-  currentSong.stop();
+  currentSong.stop(this.nowPlayingIndex);
 };
 
 Playlist.prototype.next = function() {
-  this.stop();
+  this.stop(this.nowPlayingIndex);
   this.nowPlayingIndex++;
   if(this.nowPlayingIndex === this.songs.length) {
     this.nowPlayingIndex = 0;
   }
-  this.play();
+  this.play(this.nowPlayingIndex);
 };
 
 Playlist.prototype.renderInElement = function(list) {
@@ -32,29 +32,3 @@ Playlist.prototype.renderInElement = function(list) {
     list.innerHTML += this.songs[i].toHTML();
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -5,19 +5,21 @@ function Song(title, artist, duration) {
   this.isPlaying = false;
 }
 
-Song.prototype.play = function() {
+Song.prototype.play = function(songIndex) {
   this.isPlaying = true;
+  document.getElementById("songs").children[songIndex].play();
 };
 
-Song.prototype.stop = function() {
+Song.prototype.stop = function(songIndex) {
   this.isPlaying = false;
+    document.getElementById("songs").children[songIndex].pause();
 };
 
 Song.prototype.toHTML = function() {
   var htmlString = '<li';
   if(this.isPlaying) {
   htmlString += ' class="current"';
-  }  
+  }
   htmlString += '>';
   htmlString += this.title;
   htmlString += ' - ';
@@ -27,11 +29,3 @@ Song.prototype.toHTML = function() {
   htmlString += '</span></li>';
   return htmlString;
 };
-
-
-
-
-
-
-
-

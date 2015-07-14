@@ -25,7 +25,3 @@ stopButton.onclick = function() {
   playlist.stop();
   playlist.renderInElement(playlistElement);
 }
-
-playlistElement().play();
-
-
