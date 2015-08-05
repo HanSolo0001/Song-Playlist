@@ -17,13 +17,23 @@
         <button id="stop">Stop</button>
 
     </div>
-    <audio> 
-     <source src="/Songs/Failure.mp3" type="audio/mpeg">
-     <source src="/Songs/Angels_Fall.mp3" type="audio/mpeg">
-    </audio>    
+
     <script src="playlist.js"></script>
     <script src="song.js"></script>
     <script src="app.js"></script>
+
+<!-- Here is the source list for the songs, each song must be in its own audio tag -->
+    <div id="songs">
+
+    <audio>
+     <source src="./Songs/Angels_Fall.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio>
+    <source src="./Songs/Failure.mp3" type="audio/mpeg">
+    </audio>
+    
+    </div>
 
 </body>
 
